@@ -21,7 +21,13 @@ st.title("Chroma Peek 👀")
 
 # get uri of the persist directory
 path = ""
-path = st.text_input("Enter persist path", placeholder="paste full path of persist")
+col1, col2 = st.columns([4,1])  # adjust the ratio as needed
+with col1:
+    path = st.text_input("Enter persist path", placeholder="paste full path of persist")
+with col2:
+    st.write("") 
+    if st.button('🔄'):
+        st.experimental_rerun()
 
 st.divider()
 
@@ -53,4 +59,3 @@ if not(path==""):
 
 else:
     st.subheader("Enter Valid Full Persist Path")
-        
